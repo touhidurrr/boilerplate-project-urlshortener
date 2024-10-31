@@ -11,6 +11,9 @@ app.use(cors());
 
 app.use(express.static("public"));
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 // initialize database
 const db = new Database(":memory:");
 db.exec(await Bun.file("index.sql").text());
