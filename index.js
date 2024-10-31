@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 
-app.use("/public", express.static(`${process.cwd()}/public`));
+app.use(express.static("public"));
 
 // initialize database
 const db = new Database(":memory:");
